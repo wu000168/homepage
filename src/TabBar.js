@@ -47,7 +47,7 @@ function TabBar(props) {
             flex: "1 1 auto",
           }}
           TabIndicatorProps={{
-            style: { transitionDelay: "200ms" },
+            style: { transitionDelay: "100ms" },
           }}
         >
           <Box

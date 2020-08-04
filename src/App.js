@@ -1,5 +1,4 @@
-import React from // , { useState }
-"react";
+import React from "react"; // , { useState }
 import "./App.css";
 import { Box } from "@material-ui/core";
 import { isMobile } from "react-device-detect";
@@ -24,7 +23,10 @@ function App() {
       }}
     >
       <MainPhoto isVertical={isVertical} />
-      <SideBar style={{ height: "100%", flex: "1 1 auto" }} />
+      <SideBar
+        isVertical={isVertical}
+        style={{ height: "100%", flex: "1 1 auto" }}
+      />
     </Box>
   );
 }

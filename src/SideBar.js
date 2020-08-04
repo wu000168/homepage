@@ -5,7 +5,11 @@ import ContactBar from "./ContactBar";
 
 function SideBar(props) {
   return (
-    <Box {...props} display="flex" flexDirection="row">
+    <Box
+      {...props}
+      display="flex"
+      flexDirection={props.isVertical ? "Column" : "row"}
+    >
       <TabBar isVertical={props.isVertical} isCompact={props.isCompact} />
       <ContactBar
         isVertical={props.isVertical}
