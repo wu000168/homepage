@@ -84,6 +84,9 @@ function App() {
             flex: "1 1 auto",
             overflowY: "auto",
           }}
+          TabIndicatorProps={{
+            style: { transitionDelay: "100ms" },
+          }}
         >
           <Box
             style={{
