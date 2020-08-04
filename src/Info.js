@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, IconButton, Avatar } from "@material-ui/core";
+import {
+  Box,
+  Typography,
+  IconButton,
+  Avatar,
+  Collapse,
+  Grow,
+} from "@material-ui/core";
 import LinkRoundedIcon from "@material-ui/icons/LinkRounded";
 import photo from "./static/images/photo.jpeg";
 
@@ -14,21 +21,36 @@ function Info(props) {
       flexDirection="column"
       component="div"
     >
+      <Collapse in={props.isVertical} mountOnEnter unmountOnExit timeout={500}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <Grow in={props.isVertical} mountOnEnter unmountOnExit timeout={500}>
+            <Avatar
+              style={{
+                marginBottom: "10pt",
+                width: "64pt",
+                height: "64pt",
+              }}
+            >
+              <img
+                src={photo}
+                alt="Main"
+                style={{ width: "100%", height: "auto" }}
+              />
+            </Avatar>
+          </Grow>
+        </div>
+      </Collapse>
       <Box
         display="flex"
         component="span"
         alignItems="center"
         flexWrap="nowrap"
       >
-        <div hidden={!props.isVertical}>
-          <Avatar style={{ marginRight: "8pt" }}>
-            <img
-              src={photo}
-              alt="Main"
-              style={{ width: "100%", height: "auto" }}
-            />
-          </Avatar>
-        </div>
         <Typography
           variant="h1"
           style={{

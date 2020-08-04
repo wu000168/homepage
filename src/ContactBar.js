@@ -7,6 +7,7 @@ import {
   IconButton,
   Divider,
   Typography,
+  Fade,
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -58,7 +59,7 @@ function Email(props) {
   );
 }
 
-function Info() {
+function PageInfo() {
   return (
     <div>
       <Typography variant="body2" style={{ margin: "2pt" }}>
@@ -74,11 +75,23 @@ function Info() {
         <img
           style={{ height: "8pt" }}
           src="https://material-ui.com/static/logo_raw.svg"
-          alt="material-ui"
+          alt="Material-UI"
         />{" "}
         Material-UI
+        <br />
+        hosted on{" "}
+        <svg height="8pt" viewBox="0 0 16 16" style={{ fill: "white" }}>
+          <path
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>{" "}
+        GitHub Pages
       </Typography>
-      <Divider light={true} style={{ background: "#ffffff55", margin: "4pt auto 2pt auto" }} />
+      <Divider
+        light={true}
+        style={{ background: "#ffffff55", margin: "4pt auto 2pt auto" }}
+      />
       <Typography variant="body2">© 2020 Zhiyuan Wu</Typography>
     </div>
   );
@@ -91,18 +104,18 @@ function ContactBar(props) {
     <LinkedIn {...placement} />,
     <Email {...placement} />,
   ];
-  return !props.isVertical ? (
+  return [
     <Drawer
-      variant="permanent"
+      variant="persistent"
       anchor="right"
-      open
+      open={!props.isVertical}
       PaperProps={{ elevation: props.elevation }}
       style={{ padding: "8pt" }}
     >
       {socials}
       <div style={{ margin: "auto" }} />
       <Divider />
-      <Tooltip title={<Info />} placement="left-end" arrow>
+      <Tooltip title={<PageInfo />} placement="left-end" arrow>
         <InfoOutlinedIcon
           style={{
             margin: "8pt auto 8pt auto",
@@ -110,36 +123,42 @@ function ContactBar(props) {
           }}
         />
       </Tooltip>
-    </Drawer>
-  ) : (
-    <Box
-      component={Paper}
-      display="flex"
-      alignItems="center"
-      flexWrap="wrap"
-      square
-      style={{
-        width: "100%",
-      }}
-      elevation={props.elevation}
+    </Drawer>,
+    <Fade
+      direction="up"
+      in={props.isVertical}
+      mountOnEnter
+      unmountOnExit
     >
-      <Box display="flex" alignItems="center" flexWrap="nowrap">
-        {socials}
-      </Box>
       <Box
+        component={Paper}
         display="flex"
-        flexWrap="nowrap"
+        alignItems="center"
+        flexWrap="wrap"
+        square
         style={{
-          flex: "1 1 auto",
+          width: "100%",
         }}
-        flexDirection="row-reverse"
+        elevation={props.elevation}
       >
-        <Tooltip title={<Info />} placement="top-end" arrow>
-          <InfoOutlinedIcon style={{ margin: "8pt", color: "grey" }} />
-        </Tooltip>
+        <Box display="flex" alignItems="center" flexWrap="nowrap">
+          {socials}
+        </Box>
+        <Box
+          display="flex"
+          flexWrap="nowrap"
+          style={{
+            flex: "1 1 auto",
+          }}
+          flexDirection="row-reverse"
+        >
+          <Tooltip title={<PageInfo />} placement="top-end" arrow>
+            <InfoOutlinedIcon style={{ margin: "8pt", color: "grey" }} />
+          </Tooltip>
+        </Box>
       </Box>
-    </Box>
-  );
+    </Fade>,
+  ];
 }
 
 export default ContactBar;

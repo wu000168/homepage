@@ -8,6 +8,8 @@ import {
   Box,
   Typography,
   Avatar,
+  Slide,
+  // Grow,
 } from "@material-ui/core";
 import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
 import CodeOutlinedIcon from "@material-ui/icons/CodeOutlined";
@@ -21,6 +23,7 @@ import ContactBar from "./ContactBar";
 
 function App() {
   var isVertical = useMediaPredicate("(max-width: 768px)") || isMobile;
+  // var isVertical = true;
   return (
     <Box
       className="App"
@@ -33,26 +36,27 @@ function App() {
         overflowY: isVertical ? "auto" : "hidden",
       }}
     >
-      <div
-        hidden={isVertical}
-        style={{
-          height: "100%",
-          width: "auto",
-          maxWidth: "40%",
-          flex: "0 0 auto",
-        }}
-      >
-        <img
-          src={photo}
-          alt="Main"
+      <Slide direction="right" in={!isVertical} mountOnEnter unmountOnExit>
+        <div
           style={{
             height: "100%",
-            width: "100%",
-            objectFit: "cover",
-            objectPosition: "50% 50%",
+            width: "auto",
+            maxWidth: "40%",
+            flex: "0 0 auto",
           }}
-        />
-      </div>
+        >
+          <img
+            src={photo}
+            alt="Main"
+            style={{
+              height: "100%",
+              width: "100%",
+              objectFit: "cover",
+              objectPosition: "50% 50%",
+            }}
+          />
+        </div>
+      </Slide>
       <Box
         elevation={4}
         square
@@ -61,6 +65,7 @@ function App() {
           maxWidth: "100%",
           height: "auto",
           width: isVertical ? "100%" : "auto",
+          overflowY: "auto",
           flex: "1 1 auto",
         }}
         component={Paper}
