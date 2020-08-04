@@ -3,20 +3,20 @@ import "./App.css";
 import {
   Paper,
   Divider,
-  Drawer,
-  Tooltip,
   Tabs,
   Tab,
   Box,
   Typography,
   IconButton,
+  Avatar,
 } from "@material-ui/core";
 import LinkRoundedIcon from "@material-ui/icons/LinkRounded";
 import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import EmailIcon from "@material-ui/icons/Email";
+import CodeOutlinedIcon from "@material-ui/icons/CodeOutlined";
+import BrushOutlinedIcon from "@material-ui/icons/BrushOutlined";
+import MicNoneOutlinedIcon from "@material-ui/icons/MicNoneOutlined";
 import photo from "./static/images/photo.jpeg";
+import ContactBar from "./ContactBar";
 
 function App() {
   return (
@@ -86,7 +86,7 @@ function App() {
                 style={{
                   padding: "8pt",
                   marginLeft: "24pt",
-                  marginBottom: "16pt",
+                  marginBottom: "24pt",
                   paddingTop: "16pt",
                   width: "100%",
                 }}
@@ -159,94 +159,215 @@ function App() {
                   </Typography>
                 </Box>
               </Box>
-              <Divider />
+              <Divider style={{ marginTop: "auto" }} />
               <Tab
                 href="https://drive.google.com/file/d/1ig00K4Z2UZuKEdqiLP0rJycDkpNRNLzK/view?usp=sharing"
                 target="_blank"
                 size="large"
-                // style={{ background: "#66bbff" }}
                 icon={
-                  <DescriptionOutlinedIcon
+                  <Avatar
                     style={{
                       margin: "0pt",
                       marginLeft: "8pt",
                       marginRight: "8pt",
+                      background: "#0077b5",
                     }}
-                  />
+                  >
+                    <DescriptionOutlinedIcon />
+                  </Avatar>
                 }
                 label={
                   <Box
+                    disabled
                     style={{
+                      width: "100%",
                       margin: "0pt",
                       marginLeft: "8pt",
                       marginRight: "8pt",
                     }}
+                    flexDirection="row"
                     display="flex"
                     component="span"
                     alignItems="center"
-                    flexWrap="nowrap"
+                    flexWrap="wrap"
                   >
-                    <Typography variant="h3">Résumé/CV</Typography>
+                    <Typography
+                      variant="h3"
+                      style={{
+                        textSize: "4pt",
+                        flex: "1 1 auto",
+                        textAlign: "left",
+                      }}
+                    >
+                      Résumé/CV
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{ textSize: "2pt", flex: "0 0 auto" }}
+                    >
+                      (Page WIP)
+                    </Typography>
                   </Box>
                 }
               />
               <Divider />
+              <Tab
+                href="https://github.com/wu000168"
+                target="_blank"
+                size="large"
+                icon={
+                  <Avatar
+                    style={{
+                      margin: "0pt",
+                      marginLeft: "8pt",
+                      marginRight: "8pt",
+                      background: "#072C61",
+                    }}
+                  >
+                    <CodeOutlinedIcon />
+                  </Avatar>
+                }
+                label={
+                  <Box
+                    disabled
+                    style={{
+                      width: "100%",
+                      margin: "0pt",
+                      marginLeft: "8pt",
+                      marginRight: "8pt",
+                    }}
+                    flexDirection="row"
+                    display="flex"
+                    component="span"
+                    alignItems="center"
+                    flexWrap="wrap"
+                  >
+                    <Typography
+                      variant="h3"
+                      style={{
+                        textSize: "4pt",
+                        flex: "1 1 auto",
+                        textAlign: "left",
+                      }}
+                    >
+                      Software Projects
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{ textSize: "2pt", flex: "0 0 auto" }}
+                    >
+                      (Page WIP)
+                    </Typography>
+                  </Box>
+                }
+              />
+              <Divider />
+              <Tab
+                disabled
+                target="_blank"
+                size="large"
+                icon={
+                  <Avatar
+                    style={{
+                      margin: "0pt",
+                      marginLeft: "8pt",
+                      marginRight: "8pt",
+                      background: "#ff6f00",
+                    }}
+                  >
+                    <BrushOutlinedIcon />
+                  </Avatar>
+                }
+                label={
+                  <Box
+                    style={{
+                      width: "100%",
+                      margin: "0pt",
+                      marginLeft: "8pt",
+                      marginRight: "8pt",
+                    }}
+                    flexDirection="row"
+                    display="flex"
+                    component="span"
+                    alignItems="center"
+                    flexWrap="wrap"
+                  >
+                    <Typography
+                      variant="h3"
+                      style={{
+                        textSize: "4pt",
+                        flex: "1 1 auto",
+                        textAlign: "left",
+                      }}
+                    >
+                      <del>Vecter Design</del>
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{ textSize: "2pt", flex: "0 0 auto" }}
+                    >
+                      (Coming Soon)
+                    </Typography>
+                  </Box>
+                }
+              />
+              <Divider />
+              <Tab
+                disabled
+                target="_blank"
+                size="large"
+                icon={
+                  <Avatar
+                    style={{
+                      margin: "0pt",
+                      marginLeft: "8pt",
+                      marginRight: "8pt",
+                      background: "#009688",
+                    }}
+                  >
+                    <MicNoneOutlinedIcon />
+                  </Avatar>
+                }
+                label={
+                  <Box
+                    disabled
+                    style={{
+                      width: "100%",
+                      margin: "0pt",
+                      marginLeft: "8pt",
+                      marginRight: "8pt",
+                    }}
+                    flexDirection="row"
+                    display="flex"
+                    component="span"
+                    alignItems="center"
+                    flexWrap="wrap"
+                  >
+                    <Typography
+                      variant="h3"
+                      style={{
+                        textSize: "4pt",
+                        flex: "1 1 auto",
+                        textAlign: "left",
+                      }}
+                    >
+                      <del>Podcast</del>
+                    </Typography>
+                    <Typography
+                      variant="body1"
+                      style={{ textSize: "2pt", flex: "0 0 auto" }}
+                    >
+                      (Coming Soon)
+                    </Typography>
+                  </Box>
+                }
+              />
+              <Divider style={{ marginBottom: "auto" }} />
             </Tabs>
-          </div>
-          <div>
-            <Divider />
-            <Typography variant="body2" style={{ margin: "2pt" }}>
-              made with{" "}
-              <a href="https://reactjs.org/">
-                <img
-                  style={{ height: "8pt" }}
-                  src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
-                  alt="React"
-                />
-              </a>{" "}
-              <a href="https://reactjs.org/">ReactJS</a>
-            </Typography>
           </div>
         </Box>
       </Box>
-      <Drawer
-        variant="persistent"
-        anchor="right"
-        open
-        PaperProps={{ elevation: 8 }}
-        style={{ padding: "8pt" }}
-      >
-        <Tooltip title="GitHub" placement="left" arrow>
-          <IconButton
-            size="large"
-            href="https://github.com/wu000168"
-            target="_blank"
-            style={{ color: "#24292e" }}
-          >
-            <GitHubIcon />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="LinkedIn" placement="left" arrow>
-          <IconButton
-            size="large"
-            href="https://www.linkedin.com/in/zhiyuan-wu/"
-            target="_blank"
-            style={{ color: "#0077b5" }}
-          >
-            <LinkedInIcon />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Email" placement="left" arrow>
-          <IconButton
-            size="large"
-            href="mailto://wu000168@umn.edu/"
-            target="_blank"
-            style={{ color: "#B23121" }}
-          >
-            <EmailIcon />
-          </IconButton>
-        </Tooltip>
-      </Drawer>
+      <ContactBar />
     </Box>
   );
 }
