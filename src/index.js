@@ -19,6 +19,8 @@ const theme = createMuiTheme({
     },
     button: { textTransform: "none", textAlign: "left" },
     body2: {
+      fontSize: "10pt",
+      textAlign: "center",
       fontFamily: "'Times New Roman'",
       fontVariant: "small-caps",
     },
