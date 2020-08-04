@@ -10,7 +10,7 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: "'Open Sans', sans-serif",
       fontSize: "24pt",
-      align: "left",
+      textAlign: "left",
     },
     h3: {
       fontFamily: "'Lato', sans-serif",
