@@ -13,9 +13,9 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import EmailIcon from "@material-ui/icons/Email";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 
-function GitHub() {
+function GitHub(props) {
   return (
-    <Tooltip title="GitHub" placement="left">
+    <Tooltip title="GitHub" placement={props.tooltip}>
       <IconButton
         size="large"
         href="https://github.com/wu000168"
@@ -28,9 +28,9 @@ function GitHub() {
   );
 }
 
-function LinkedIn() {
+function LinkedIn(props) {
   return (
-    <Tooltip title="LinkedIn" placement="left">
+    <Tooltip title="LinkedIn" placement={props.tooltip}>
       <IconButton
         size="large"
         href="https://www.linkedin.com/in/zhiyuan-wu/"
@@ -43,9 +43,9 @@ function LinkedIn() {
   );
 }
 
-function Email() {
+function Email(props) {
   return (
-    <Tooltip title="Email" placement="left">
+    <Tooltip title="Email" placement={props.tooltip}>
       <IconButton
         size="large"
         href="mailto://wu000168@umn.edu/"
@@ -74,7 +74,12 @@ function Info() {
 }
 
 function ContactBar(props) {
-  const socials = [<GitHub />, <LinkedIn />, <Email />];
+  const placement = { tooltip: props.isVertical ? "top" : "left" };
+  const socials = [
+    <GitHub {...placement} />,
+    <LinkedIn {...placement} />,
+    <Email {...placement} />,
+  ];
   return !props.isVertical ? (
     <Drawer
       variant="permanent"

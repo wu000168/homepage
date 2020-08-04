@@ -49,7 +49,7 @@ function Info(props) {
           <Typography
             variant="h1"
             style={{
-              fontSize: "14pt",
+              fontSize: "16pt",
             }}
           >
             吴致远
