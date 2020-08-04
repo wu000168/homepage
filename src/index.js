@@ -39,6 +39,14 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <React.StrictMode>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
