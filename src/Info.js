@@ -21,14 +21,14 @@ function Info(props) {
       flexDirection="column"
       component="div"
     >
-      <Collapse in={props.isVertical} mountOnEnter unmountOnExit timeout={500}>
+      <Collapse in={props.isVertical} mountOnEnter unmountOnExit>
         <div
           style={{
             width: "100%",
             height: "100%",
           }}
         >
-          <Grow in={props.isVertical} mountOnEnter unmountOnExit timeout={500}>
+          <Grow in={props.isVertical} mountOnEnter unmountOnExit>
             <Avatar
               style={{
                 marginBottom: "10pt",

@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const theme = createMuiTheme({
+const homeTabsTheme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: "'Open Sans', sans-serif",
@@ -38,10 +38,9 @@ const theme = createMuiTheme({
     },
   },
 });
-
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={homeTabsTheme}>
       <App />
     </ThemeProvider>
   </React.StrictMode>,

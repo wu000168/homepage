@@ -1,13 +1,12 @@
 import React from "react";
 import {
-  Drawer,
   Paper,
   Box,
   Tooltip,
   IconButton,
   Divider,
   Typography,
-  Fade,
+  Slide,
 } from "@material-ui/core";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -105,31 +104,35 @@ function ContactBar(props) {
     <Email {...placement} />,
   ];
   return [
-    <Drawer
-      variant="persistent"
-      anchor="right"
-      open={!props.isVertical}
-      PaperProps={{ elevation: props.elevation }}
-      style={{ padding: "8pt" }}
-    >
-      {socials}
-      <div style={{ margin: "auto" }} />
-      <Divider />
-      <Tooltip title={<PageInfo />} placement="left-end" arrow>
-        <InfoOutlinedIcon
-          style={{
-            margin: "8pt auto 8pt auto",
-            color: "grey",
-          }}
-        />
-      </Tooltip>
-    </Drawer>,
-    <Fade
-      direction="up"
-      in={props.isVertical}
-      mountOnEnter
-      unmountOnExit
-    >
+    <Slide direction="left" in={!props.isVertical} mountOnEnter unmountOnExit>
+      <Box
+        component={Paper}
+        display="flex"
+        alignItems="center"
+        flexWrap="nowrap"
+        square
+        style={{
+          height: "100%",
+          width: "auto",
+          flex: "0 0 auto",
+          overflowY: "auto",
+        }}
+        elevation={props.elevation}
+        flexDirection="column"
+      >
+        {socials}
+        <Divider style={{ marginTop: "auto", height: "1pt", alignSelf:"stretch" }} />
+        <Tooltip title={<PageInfo />} placement="left-end" arrow>
+          <InfoOutlinedIcon
+            style={{
+              margin: "8pt auto 8pt auto",
+              color: "grey",
+            }}
+          />
+        </Tooltip>
+      </Box>
+    </Slide>,
+    <Slide direction="up" in={props.isVertical} mountOnEnter unmountOnExit>
       <Box
         component={Paper}
         display="flex"
@@ -157,7 +160,7 @@ function ContactBar(props) {
           </Tooltip>
         </Box>
       </Box>
-    </Fade>,
+    </Slide>,
   ];
 }
 
