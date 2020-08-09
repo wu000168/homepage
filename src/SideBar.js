@@ -27,7 +27,14 @@ function SideBar(props) {
             isVertical={props.isVertical}
             isCompact={props.isCompact}
           />,
-          <Divider style={{ height: "1pt", alignSelf: "stretch" }} />,
+          <Divider
+            style={{
+              height: "1pt",
+              alignSelf: "stretch",
+              marginTop: "8pt",
+              marginBottom: "8pt",
+            }}
+          />,
         ]}
       ></ContactBar>
     </Box>

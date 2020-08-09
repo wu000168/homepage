@@ -18,6 +18,7 @@ import BrushOutlinedIcon from "@material-ui/icons/BrushOutlined";
 import MicNoneOutlinedIcon from "@material-ui/icons/MicNoneOutlined";
 import Info from "./Info";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import photo from "./static/images/photo.jpeg";
 
 const homeTabsTheme = createMuiTheme({
   typography: {
@@ -132,7 +133,7 @@ function FullTabBar(props) {
                         textAlign: "left",
                       }}
                     >
-                      {tab.title}
+                      {tab.disabled ? <del>{tab.title}</del> : tab.title}
                     </Typography>
                     <Typography
                       variant="body1"
@@ -176,21 +177,23 @@ function CompactTab(props) {
       in={props.isCompact && !props.isVertical}
       mountOnEnter
       unmountOnExit
+      style={{ transitionDelay: "300ms" }}
     >
       <div {...props} style={{ height: "auto" }}>
         <ThemeProvider theme={compactTabTheme}>
           <Tabs orientation="vertical" value={props.value} variant="centered">
+            {props.tabs.head.compact}
             {props.tabs.tabs.map((tab) => (
               <Tab
                 href={tab.href}
                 label={
                   <Tooltip title={tab.title} placement="left">
-                    {tab.icon}
+                    {{ ...tab.icon, props: { style: { color: tab.color } } }}
                   </Tooltip>
                 }
                 disabled={tab.disabled}
                 style={{ minWidth: "0pt" }}
-              ></Tab>
+              />
             ))}
           </Tabs>
         </ThemeProvider>
@@ -214,6 +217,35 @@ function TabBar(props) {
         >
           <Info isVertical={props.isVertical} />
         </Box>
+      ),
+      compact: (
+        <Tab
+          href="/"
+          style={{ minWidth: "0pt" }}
+          icon={
+            <Tooltip title="Home" placement="left">
+              <Avatar
+                style={{
+                  width: "24pt",
+                  height: "24pt",
+                  marginTop: "8pt",
+                  marginBottom: "8pt",
+                }}
+              >
+                <img
+                  src={photo}
+                  alt="Zhiyuan Wu"
+                  style={{
+                    height: "100%",
+                    width: "100%",
+                    objectFit: "cover",
+                    objectPosition: "50% 50%",
+                  }}
+                />
+              </Avatar>
+            </Tooltip>
+          }
+        ></Tab>
       ),
     },
     tabs: [
@@ -253,7 +285,7 @@ function TabBar(props) {
   };
   return [
     <FullTabBar id="TabBar" {...props} tabs={tabs} value={0} />,
-    <CompactTab id="TabBar" {...props} tabs={tabs} value={0} />,
+    <CompactTab id="TabBar" {...props} tabs={tabs} value={1} />,
   ];
 }
 
