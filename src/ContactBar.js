@@ -119,9 +119,13 @@ function ContactBar(props) {
         }}
         elevation={props.elevation}
         flexDirection="column"
+        {...props}
       >
+        {props.isCompact && !props.isVertical ? props.tabs : null}
         {socials}
-        <Divider style={{ marginTop: "auto", height: "1pt", alignSelf:"stretch" }} />
+        <Divider
+          style={{ marginTop: "auto", height: "1pt", alignSelf: "stretch" }}
+        />
         <Tooltip title={<PageInfo />} placement="left-end" arrow>
           <InfoOutlinedIcon
             style={{

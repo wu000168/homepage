@@ -2,10 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 
-const homeTabsTheme = createMuiTheme({
+const mainTheme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: "'Open Sans', sans-serif",
@@ -26,9 +27,6 @@ const homeTabsTheme = createMuiTheme({
     },
   },
   overrides: {
-    MuiTabs: {
-      indicator: { left: "8pt", background: "rgb(255,204,51)", width: "2pt" },
-    },
     MuiTab: {
       wrapper: {
         alignItems: "center",
@@ -38,11 +36,14 @@ const homeTabsTheme = createMuiTheme({
     },
   },
 });
+
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={homeTabsTheme}>
-      <App />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={mainTheme}>
+        <App />
+      </ThemeProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
