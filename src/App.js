@@ -38,12 +38,18 @@ function App() {
           />
         </Route>
         <Route>
-          <Route exact path="/resume" component={Resume}></Route>
-          <SideBar
-            isVertical={isVertical}
-            isCompact
-            style={{ height: isVertical ? "auto" : "100%", flex: "1 1 auto" }}
-          />
+          <Box
+            style={{ overflow: "hidden", height: "100vh", width: "100%" }}
+            flexDirection="row-reverse"
+            display="flex"
+          >
+            <SideBar
+              isVertical={isVertical}
+              isCompact
+              style={{ height: isVertical ? "auto" : "100%", flex: "0 0 auto" }}
+            />
+            <Route exact path="/resume" component={Resume} />
+          </Box>
         </Route>
       </Switch>
     </Box>

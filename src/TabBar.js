@@ -254,7 +254,7 @@ function TabBar(props) {
         color: "#0077b5",
         title: "Résumé/CV",
         trailing: "(Page WIP)",
-        href: "/resume",
+        href: "#/resume",
         disabled: false,
       },
       {
