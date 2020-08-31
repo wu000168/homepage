@@ -40,7 +40,7 @@ function App() {
         <Route>
           <Box
             style={{ overflow: "hidden", height: "100vh", width: "100%" }}
-            flexDirection="row-reverse"
+            flexDirection={isVertical ? "column-reverse" : "row-reverse"}
             display="flex"
           >
             <SideBar

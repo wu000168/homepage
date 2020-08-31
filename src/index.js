@@ -39,7 +39,7 @@ const mainTheme = createMuiTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename={`${process.env.PUBLIC_URL}/`}>
+    <Router basename={process.env.PUBLIC_URL}>
       <ThemeProvider theme={mainTheme}>
         <App />
       </ThemeProvider>
