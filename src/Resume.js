@@ -447,7 +447,7 @@ function Resume() {
                     alignItems="center"
                     style={{ marginLeft: "-12pt", marginRight: "-12pt" }}
                   >
-                    <a href="https://tbp.org" target="_blank">
+                    <a href="https://tbp.org" target="_blank" rel="noopener noreferrer">
                       <img
                         style={{
                           width: "100%",
@@ -487,7 +487,7 @@ function Resume() {
                     alignItems="center"
                     marginBottom="12pt"
                   >
-                    <a href="https://ato.org" target="_blank">
+                    <a href="https://ato.org" target="_blank" rel="noopener noreferrer">
                       <img
                         style={{
                           width: "100%",
