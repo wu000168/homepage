@@ -131,9 +131,11 @@ function Resume() {
               Zhiyuan Wu
             </Typography>
             <Box
+              flexWrap="wrap"
               container
+              display="flex"
               direction="row"
-              justify="flex-start"
+              justifyContent="flex-start"
               alignItems="flex-start"
               style={{
                 marginTop: "4pt",
