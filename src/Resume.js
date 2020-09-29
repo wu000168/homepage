@@ -6,6 +6,7 @@ import {
   Typography,
   Avatar,
   Chip,
+  // Divider,
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -209,6 +210,42 @@ function Resume() {
               <Timeline align="left" component="span">
                 <TimelineItem>
                   <TimelineOppositeContent style={{ minWidth: "16%" }}>
+                    September 2020 - Present
+                  </TimelineOppositeContent>
+                  <TimelineSeparator>
+                    <TimelineDot style={{ backgroundColor: "#ffcc33" }} />
+                    <TimelineConnector />
+                  </TimelineSeparator>
+                  <TimelineContent
+                    style={{
+                      flex: "1 1 auto",
+                      padding: "16pt",
+                      minWidth: "84%",
+                    }}
+                  >
+                    <Typography variant="h2" style={{ marginBottom: "4pt" }}>
+                      Undergraduate Teaching Assistant
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      style={{ marginBottom: "4pt" }}
+                    >
+                      Department of Computer Scicence &amp; Engineering,
+                      University of Minnesota
+                    </Typography>
+                    <Typography variant="body1">Fall 2020</Typography>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      style={{ marginBottom: "2pt" }}
+                    >
+                      CSci 5801 Software Engineering I
+                    </Typography>
+                  </TimelineContent>
+                </TimelineItem>
+                <TimelineItem>
+                  <TimelineOppositeContent style={{ minWidth: "16%" }}>
                     September 2020 - May 2021
                   </TimelineOppositeContent>
                   <TimelineSeparator>
@@ -226,14 +263,18 @@ function Resume() {
                       color="textSecondary"
                       style={{ marginBottom: "4pt" }}
                     >
-                      TBD (Target/Medtronic/C.H. Robinson)
-                      <br /> through Department of Computer Scicence &amp;
-                      Engineering, University of Minnesota
+                      Target
+                      <br />
+                      <span style={{ fontStyle: "italic", fontSize: "4pt" }}>
+                        through Department of Computer Scicence &amp;
+                        Engineering, University of Minnesota
+                      </span>
                     </Typography>
                     <Typography variant="body1" style={{ marginBottom: "2pt" }}>
                       Working within a team of students, a corporate sponsor,
-                      and a supervising facilitator, developing a software
-                      system (TBD), distributing system to users, and
+                      and a supervising facilitator, developing a security log
+                      analytics tool for the information security group of
+                      Target, distributing system to them, and
                       extending/maintaining it in response to their needs
                     </Typography>
                   </TimelineContent>
@@ -384,7 +425,97 @@ function Resume() {
             <AccordionDetails
               style={{ textAlign: "left", margin: "4pt", padding: "8pt" }}
             >
-              WIP
+              <Box
+                display="flex"
+                flexDirection="row"
+                justifyContent="center"
+                flexWrap="wrap"
+                width="100%"
+              >
+                <Box
+                  display="flex"
+                  flexGrow={1}
+                  flexShrink={1}
+                  style={{ padding: "4pt", marginBottom: "4pt" }}
+                  alignItems="center"
+                  flexDirection="column"
+                >
+                  <Box
+                    justifyContent="center"
+                    alignItems="center"
+                    style={{ marginLeft: "-12pt", marginRight: "-12pt" }}
+                  >
+                    <a href="https://tbp.org" target="_blank">
+                      <img
+                        style={{
+                          width: "100%",
+                          maxWidth: "256pt",
+                          marginRight: "16pt",
+                        }}
+                        alignSelf="center"
+                        src="https://www.tbp.org/Images/Logos/2019/Horizontal_BLUE2.png"
+                        alt="Tau Beta Pi"
+                      />
+                    </a>
+                  </Box>
+                  <Typography variant="body1" style={{ marginTop: "-4pt" }}>
+                    MN A Chapter
+                  </Typography>
+                  <Typography variant="body1" marginTop="-8pt">
+                    Member
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    style={{ fontSize: "4pt", marginTop: "-2pt" }}
+                  >
+                    Fall 2019 - present
+                  </Typography>
+                </Box>
+                <Box
+                  display="flex"
+                  flexGrow={1}
+                  flexShrink={1}
+                  style={{ padding: "4pt" }}
+                  alignItems="center"
+                  flexDirection="column"
+                >
+                  <Box
+                    justifyContent="center"
+                    alignItems="center"
+                    marginBottom="12pt"
+                  >
+                    <a href="https://ato.org" target="_blank">
+                      <img
+                        style={{
+                          width: "100%",
+                          maxWidth: "196pt",
+                          paddingTop: "8pt",
+                        }}
+                        src="https://atolive-wpengine.netdna-ssl.com/wp-content/uploads/2019/01/ATO-dark-blue-yellow@2x.png"
+                        alt="Alpha Tau Omega"
+                      />
+                    </a>
+                  </Box>
+                  <Typography
+                    variant="body1"
+                    marginTop="-8pt"
+                    style={{ marginTop: "-4pt" }}
+                  >
+                    ΓN Chapter
+                  </Typography>
+                  <Typography variant="body1" marginTop="-8pt">
+                    Scholarship Chair
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    style={{ fontSize: "4pt", marginTop: "-2pt" }}
+                  >
+                    Fall 2020 - present
+                  </Typography>
+                </Box>
+              </Box>
             </AccordionDetails>
           </Accordion>
           <Accordion component={Card}>
